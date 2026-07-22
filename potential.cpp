@@ -48,10 +48,10 @@ void Map::print_map(int N)
 {
     std::ofstream fout("map_one.txt");
 
-    double dx = (x_max - x_min) / (N-1);    //N darab racspomt --> N-1 "savkoz"
+    double dx = (x_max - x_min) / (N-1);
     double dy = (y_max - y_min) / (N-1);
 
-    for (int i = 0; i < N; i++)             //sorszam == y, oszlopszam ==x
+    for (int i = 0; i < N; i++)
     {
         double y = y_min + i * dy;
 
