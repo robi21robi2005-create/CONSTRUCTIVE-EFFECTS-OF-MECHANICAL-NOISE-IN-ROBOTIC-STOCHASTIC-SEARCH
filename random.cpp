@@ -11,7 +11,7 @@ void set_seed(unsigned int seed)
 
 double random_01()
 {
-    static std::uniform_real_distribution<double> dist(0.0, 1.0);   // static, hogy a dist csak egyszer jojjon letre
+    static std::uniform_real_distribution<double> dist(0.0, 1.0);
     return dist(gen);
 }
 
