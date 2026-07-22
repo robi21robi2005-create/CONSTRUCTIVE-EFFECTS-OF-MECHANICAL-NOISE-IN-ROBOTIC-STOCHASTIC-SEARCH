@@ -16,8 +16,8 @@ Robot::Robot(double x0, double y0, double ERR, double TEMP, double STLE)
     step_length = STLE;
 }
 
-Robot::Position Robot::get_position()       //a Robot osztalyban levo Position tipusu fajlt terit vissza (Robot::Position)
-{                                           //[mit ad vossza] [kie a fuggveny]::[fuggveny]
+Robot::Position Robot::get_position()
+{
     return pos;
 }
 
@@ -25,7 +25,6 @@ void Robot::simulation(Map& map, int N, std::ofstream& fout)
 {
     pos_list.clear();
     pos_list.push_back(pos);
-    //std::ofstream fout(filename);
     for (int i = 0; i < N; i++)
     {
         step(map);
@@ -129,7 +128,7 @@ void Robot::step(Map& map)
         {
             pos = new_position;
             pos_list.push_back(pos);
-            return;                 //az odaerkezesnel miert nincs hiba?        //mert eleve benne van a random szamban a hiba
+            return;
         }
     }
     else
@@ -145,13 +144,6 @@ void Robot::step(Map& map)
         }
         else
         {
-            /*do
-            {
-                error_step_length = random_step(error);
-                error_angle = random_angle();
-                error_position.x = old_positon.x + error_step_length * cos(error_angle);
-                error_position.y = old_positon.y + error_step_length * sin(error_angle);
-            }while(!map.inside(error_position.x, error_position.y));*/
             pos = old_positon;
         }
         pos_list.push_back(pos);
