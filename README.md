@@ -1,7 +1,5 @@
 CONSTRUCTIVE EFFECTS OF MECHANICAL NOISE IN ROBOTIC STOCHASTIC SEARCH
 
-CONSTRUCTIVE EFFECTS OF MECHANICAL NOISE IN ROBOTIC STOCHASTIC SEARCH
-
 This repository contains the custom object-oriented C++ framework used to investigate
 the application of the Metropolis algorithm for localizing global maxima in complex, 
 unknown scalar fields.
@@ -12,7 +10,7 @@ software-based computational physics, deploying these algorithms on physical
 differential-drive robots introduces unavoidable hardware constraints. A real robotic 
 system cannot return exactly to its original position after a rejected step. 
 This simulation investigates the impact of this physical noise by treating the 
-mechanical error as a forced continuous random walk within an \( \epsilon \)-radius. 
+mechanical error as a forced continuous random walk within an ε-radius. 
 Counterintuitively, the introduction of this mechanical noise acts as a constructive 
 catalyst against static entrapment, demonstrating macroscopic stochastic resonance 
 and improving the search algorithm's efficiency.
@@ -35,13 +33,13 @@ during long Markov chain generation.
 robot.h / robot.cpp: Contains the core physics logic for the autonomous agent. 
 It evaluates the thermodynamic transition probabilities using a modified Metropolis 
 acceptance criterion. Crucially, it implements the non-ideal robotic behavior by forcing
-a localized diffusion step (simulating mechanical noise, $\epsilon$) whenever a move 
+a localized diffusion step (simulating mechanical noise, ε) whenever a move 
 is rejected.
 
 Input and Output
 The simulation reads initial physical constraints, the mechanical error 
-parameter ($\epsilon$), the fictitious temperature ($T$), and the maximum 
-step size ($d_{max}$) from an input file named test.txt.
+parameter (ε), the fictitious temperature (T), and the maximum 
+step size (dₘₐₓ) from an input file named test.txt.
 
 The spatial trajectory of the continuous random walk is exported to road.txt.
 
